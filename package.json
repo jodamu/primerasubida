@@ -1,0 +1,14 @@
+{
+  "name": "primero",
+  "version": "1.0.1",
+  "description": "mi primer trabajo",
+  "main": "principal.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daniel jodamu90@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^13.2.2"
+  }
+}

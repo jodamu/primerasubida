@@ -1,0 +1,4 @@
+el nombre del estudiante  jose_daniel
+ con cedula numero  1234556789
+se ha matriculado en el curso llamado PHP INTERMEDIO  
+y tiene una duracion de 50 horas y el valor es 3200

@@ -1,0 +1,8 @@
+ingresar a la carpeta que contiene los archivos 
+
+mostrar listados despues de estar en la carpeta
+copiar  node principal
+
+para inscribirse en un curso ingresar
+node principal inscribir -i=4 -n=jose daniel -c= 15343084
+puedes colocar cualquier dato
