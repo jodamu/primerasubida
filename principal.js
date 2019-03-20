@@ -13,6 +13,8 @@ const opciones = {
 	},
 
 } 
+const express = require('express')
+const app = express()
 const argv = require('yargs')
 			.command ('inscribir', 'los datos del aspirante',opciones)
 			.argv
@@ -51,17 +53,18 @@ valor=cursoseleccionado.valor;
 //estudiate=argv.nombre
 
 
-let crearArchivo=()=>{
-	texto= 'el nombre del estudiante  '+ argv.n +'\n'+
-			' con cedula numero  '+argv.c+'\n'+
-			'se ha matriculado en el curso llamado '+ nombrecurso + '  \n'+
-			'y tiene una duracion de '+ duracion +' horas y el valor es '+valor;
-		fs.writeFile('datos.txt',texto,(err)=>{
+//let crearArchivo=()=>{
+	 texto= 'el nombre del estudiante  <h1>'+ argv.n +'</h1><br>'+
+			' con cedula numero  <b>'+argv.c+'</b><br>'+
+			'se ha matriculado en el curso llamado <b>'+ nombrecurso + '</b><br>'+
+			'y tiene una duracion de <b>'+ duracion +' </b>horas y el valor es<b> '+valor+'</b>';
+		/*fs.writeFile('datos.txt',texto,(err)=>{
 			if (err) throw (err);
 			console.log('se ha creado el archivo');
-		});
-}
-crearArchivo();
+		});*/
+//}
+
+//crearArchivo();
 
 } else {
 	
@@ -71,15 +74,22 @@ texto=' ';
 var num=0;
 function lista(){
 	if(num<4){
-	console.log('el curso de ID '+cursos[num].id+' se llama '+cursos[num].nombre+' \n'+
-		'y tiene una duracion de '+cursos[num].duracion+' horas y un valor '+cursos[num].valor);
+	texto +='  el curso de ID '+cursos[num].id+' se llama '+cursos[num].nombre+' \n'+
+		'y tiene una duracion de '+cursos[num].duracion+' horas y un valor '+cursos[num].valor+'<br>';
 
 	num++;
 } else{
-	process.exit(1);
+	//process.exit(1);
 }
 }
 
 setInterval(lista, 2000);
 
 }
+
+
+ app.get('/', function (req, res) {
+  res.send(texto)
+})
+ 
+app.listen(3000)
